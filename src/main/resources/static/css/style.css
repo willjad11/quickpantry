@@ -1,0 +1,561 @@
+@charset "ISO-8859-1";
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+body {
+	background-color: #fffcd7;
+	padding-bottom: 15px;
+}
+
+table {
+	margin: 0px auto;
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 20%;
+	table-layout: fixed;
+}
+
+td, th {
+	border: 1px solid #dddddd;
+	text-align: center;
+	padding: 8px;
+	width: fit-content;
+}
+
+tr:nth-child(even) {
+	background-color: #dddddd;
+}
+
+tr:nth-child(odd) {
+	background-color: #b0b0b0;
+}
+
+.noIngredients {
+	text-align: center;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	height: 100px;
+	padding: 0px 35px 35px 35px;
+	flex-basis: 100%;
+	margin-bottom: 50px;
+}
+
+.headerCenter {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	margin: 0px auto;
+	font-size: xx-large;
+}
+
+.headerRightCont {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+	width: 175px;
+	margin-left: -175px;
+}
+
+.headerRight3 {
+	display: flex;
+}
+
+.headerRight3 > a {
+	margin-right: 4px;
+}
+
+.headerRight3 > form {
+	margin-left: 4px;
+}
+
+.createCont {
+	margin: 0px auto;
+	display: flex;
+	justify-content: center;
+}
+
+.ingredientForm > p {
+	display: flex;
+	width: 350px;
+	justify-content: space-between;
+	align-items: center;
+	margin: 15px;
+}
+
+.submit {
+	float: right;
+}
+
+.ingredientInput {
+	width: 200px;
+}
+
+.error {
+	color: red;
+}
+
+.deleteButton {
+	background: none!important;
+	border: none;
+	padding: 0!important;
+	font-family: arial, sans-serif;
+	color: red;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.editIngredientButton {
+	background: none!important;
+	border: none;
+	padding: 0!important;
+	font-family: arial, sans-serif;
+	color: #bb6700;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.logoutButton {
+	background: none!important;
+	border: none;
+	padding: 0!important;
+	font-family: arial, sans-serif;
+	color: blue;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.ingredientActions {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.ingredientActions > button {
+	margin-right: 20px;
+}
+
+.ingredientActions > input {
+	margin: 10px 20px 0px 20px;
+}
+
+.mainCont {
+	margin: 50px auto;
+	width: fit-content;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.registerCont, .loginCont {
+	text-align: center;
+	padding: 25px;
+	border: 2px solid grey;
+	border-radius: 10px;
+	height: fit-content;
+}
+
+.registerCont > h1, .loginCont > h1 {
+	border-bottom: 2px solid grey;
+	margin-bottom: 20px;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+}
+
+.loginButton {
+	margin-top: 15px;
+}
+
+.editButton {
+	display: inline-block;
+}
+
+.ingredientEditForm {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.ingredientForm {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: 15px;
+}
+
+.ingredientForm > * {
+	margin: 5px;
+}
+
+.recipeCont {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-top: 10px;
+}
+
+.recipeBox {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 250px;
+	height: 250px;
+	flex-basis: 20%;
+	margin: 50px 15px 50px 15px;
+}
+
+.recipeIndexTitle {
+	margin: 5px 0px 5px 0px;
+	text-align: center;
+}
+
+.indexRecipeIMG {
+	border-radius: 15px;
+	border: 2px solid black;
+	transition: transform .2s;
+	max-height: 235px;
+	max-width: 316px;
+}
+
+.indexRecipeIMG:hover {
+	transform: scale(1.2);
+}
+
+.ingredientListCont {
+	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
+	margin-top: 5px;
+}
+
+ .indexUsedLabel {
+ 	color: green;
+ }
+ 
+.indexUnusedLabel {
+ 	color: darkorange;
+ }
+ 
+.indexMissedLabel {
+ 	color: red;
+ }
+ 
+ .indexUsedIngredients, .indexUnusedIngredients, .indexMissedIngredients {
+ 	position: relative;
+ }
+ 
+ .indexUsedIngredients:hover .recipeInfo, .indexUnusedIngredients:hover .recipeInfo, .indexMissedIngredients:hover .recipeInfo {
+	visibility: visible;
+}
+ 
+ .indexUsedIngredients .recipeInfo, .indexUnusedIngredients .recipeInfo, .indexMissedIngredients .recipeInfo {
+	visibility: hidden;
+	width: 120px;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px;
+	border-radius: 6px;
+	width: 150px;
+	bottom: 100%;
+	left: 50%;
+	margin-left: -60px;
+	position: absolute;
+	z-index: 1;
+}
+
+.recipeDetailIMG {
+	margin: 0px auto;
+	display: block;
+	border-radius: 15px;
+	border: 1px solid black;
+}
+
+.recipeDetailIMGTitle, .recipeDetailIMGServings {
+	margin-top: 5px;
+	text-align: center;
+}
+
+.recipeDetailCont {
+	margin-top: 15px;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.recipeDetailBox1 {
+	display: flex;
+	flex-direction: column;
+	flex-basis: 15%;
+	margin: 0px 15px 0px 15px;
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 10px;
+	height: fit-content;
+	background-color: white;
+}
+
+.ingredientBox, .statBox, .authorBox {
+	display: flex;
+	flex-direction: column;
+	flex-basis: 15%;
+	margin: 0px 15px 0px 15px;
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 10px;
+	height: fit-content;
+	background-color: #ffffcc;
+	font-weight: bold;
+	width: 250px;
+}
+
+.statBox, .authorBox {
+	margin-top: 15px;
+}
+
+.recipeDetailBox1 > h2, .recipeDetailBox3 > h2, .ingredientBoxTitle, .statBoxTitle, .authorBoxTitle {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.nutrientItem, .ingredientItem, .statItem {
+	display: flex;
+	justify-content: space-between;
+	margin: 5px 0px 5px 0px;
+}
+
+.recipeDetailBox3 {
+	display: flex;
+	flex-direction: column;
+	flex-basis: 60%;
+	margin: 0px 15px 0px 15px;
+	border: 2px solid black;
+	border-radius: 10px;
+	padding: 15px;
+	height: fit-content;
+	background-color: #ffedca;
+}
+
+.recipeDetailInnerTitle {
+	margin: 5px 0px 5px 0px;
+}
+
+.instructionItem {
+	border: 2px solid grey;
+	border-radius: 15px;
+	margin: 15px;
+	padding: 8px;
+	font-size: x-large;
+	background-color: #ffe0a8;
+}
+
+.recipeSteps {
+	border-radius: 20px;
+	border-right: 2px solid grey;
+	border-left: 2px solid grey;
+	width: fit-content;
+	padding: 0px 10px 0px 10px;
+	margin-bottom: 10px;
+}
+
+.stepItem {
+	margin-left: 25px;
+}
+
+.recipeCheckbox {
+	float: right;
+	height: 20px;
+	width: 20px;
+}
+
+.recipeForm {
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+}
+
+.favoriteRecipeCont, .categoryCont {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.categoryCont {
+	margin: 15px;
+}
+
+.favoriteRecipeItem {
+	width: 30%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: 2px solid gray;
+	border-radius: 20px;
+	padding: 5px;
+	margin: 14px;
+}
+
+.favoriteRecipeItem > img {
+	max-height: 100px;
+	max-width: 100px;
+	border-radius: 15px;
+	border: 1px solid black;
+}
+
+.favoriteRecipeItem > a {
+	overflow-wrap: anywhere;
+	padding: 10px;
+	text-align: center;
+}
+
+.addCategory, .categoryForm {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.categoryForm {
+	margin-top: 10px;
+}
+
+.addCategoryActions > * {
+	margin: 10px;
+}
+
+.savedRecipeTitle {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.collapsible {
+	background-color: #777;
+	color: white;
+	cursor: pointer;
+	padding: 18px;
+	width: 35%;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 15px;
+	display: block;
+	margin: 0px auto;
+	font-size: larger;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	margin-bottom: 15px;
+}
+
+.active, .collapsible:hover {
+	background-color: #555;
+}
+
+.collapsible:after {
+	content: '\002B';
+	color: white;
+	font-weight: bold;
+	float: right;
+	margin-left: 5px;
+	border-bottom: 0px;
+}
+
+.active:after {
+	content: "\2212";
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	padding: 0 18px;
+	max-height: 0;
+	width: 33%;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+	background-color: #f1f1f1;
+	margin: -15px 0px 15px 0px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.categoryForm {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.categoryForm > * {
+	margin: 5px;
+}
+
+.favoriteRecipeCategoryItem {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: 2px solid gray;
+	border-radius: 20px;
+	padding: 5px;
+	margin: 14px;
+}
+
+.favoriteRecipeCategoryItem > img {
+	max-height: 100px;
+	max-width: 100px;
+	border-radius: 15px;
+	border: 1px solid black;
+}
+
+.favoriteRecipeCategoryItem > a {
+	overflow-wrap: anywhere;
+	padding: 10px;
+	text-align: center;
+}
+
+.categoryControls {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 5px 0px 5px 0px;
+}
+
+.categoryControlButtons {
+	display: flex;
+	justify-content: space-between;
+}
+
+#categoryControlAddRecipeBox > h4, #categoryControlRemoveRecipeBox > h4, #categoryControlRenameCategoryBox > h4, #categoryControlDeleteCategoryBox > h4, .recipeControlHeader, .dashboardHeader, .pantryHeader {
+	text-align: center;
+}
+
+.indexHeader {
+	font-size: large;
+	font-style: italic;
+}
+
+.noSavedRecipes, .noCategories {
+	text-align: center;
+	font-style: italic;
+	margin: 15px;
+}
